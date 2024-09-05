@@ -1,0 +1,42 @@
+
+
+// Was sind Komponenten?
+-> Einzelne UI-Elemente von React, die im Prinzip einfach nur
+Funktionen sind.
+z.B. export function HalloWelt(){
+    return <h1>Hallo Welt.</h1>;
+}
+
+Komponenten können auch andere Komponenten schachteln.
+
+
+// Was ist JSX?
+- XML artige Syntax von React
+- Alles innerhalb {} wird als Code interpretiert und
+alles innerhalb <tag> wird als JSX interpretiert
+
+export default function JscTextCode() {
+    const element = (
+        <h1>
+            Hallo { "Welt" } !
+        </h1>
+    );
+    return element;
+}
+
+// Kommentare
+Kommentare müssen in Codeblöcke geschrieben werden, nicht in JSX möglich
+
+
+// States
+Beschreiben den Zustand einer Komponente.
+
+// Hooks
+Müssen mit "use" beginnen. Z.B. useEffect(() => {
+    // code
+})
+Hooks sind im Prinzip auch einfach nur Funktionen
+
+Mit Hooks kann man in Funktionen Lifecycle Methoden und Instanzvariablen verwenden von Klassen
+
+Hooks müssen immer in der gleichen Anzahl und der gleichen Reihenfolge aufgerufen werden
