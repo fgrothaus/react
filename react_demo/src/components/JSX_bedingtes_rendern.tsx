@@ -1,5 +1,5 @@
 import { log } from "console";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 export function Bedingtes_rendern () {
 
@@ -9,7 +9,7 @@ export function Bedingtes_rendern () {
 
     return (
     <React.Fragment>
-        {valid && <div>hi</div>}
+        {valid && <div>Hi</div>}
     </React.Fragment>
     )
 }
