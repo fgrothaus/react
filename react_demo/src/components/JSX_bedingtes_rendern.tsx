@@ -13,3 +13,14 @@ export function Bedingtes_rendern () {
     </React.Fragment>
     )
 }
+
+export function Bedingtes_rendern2 () {
+
+    const valid = true;
+
+    return (
+        <React.Fragment>
+            {valid && <div>Moinsen</div>}
+        </React.Fragment>
+    )
+}
