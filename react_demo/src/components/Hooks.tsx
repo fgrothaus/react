@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 
 export function Hooks(){
 
+
     // In React werden keine Klassen mehr verwendet, sondern Funktionen. In dem Fall hier die Funktion "Hooks"
     // Modernes React will aber trotzdem sowas wie Instanzvariablen und Lifecycle Methoden nutzen. Dies wird umgesetzt durch HOOKS
 

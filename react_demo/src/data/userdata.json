@@ -1,9 +1,0 @@
-{
-  "kesseboehmer": {
-    "abteilungen": {
-      "IT": ["Grothaus", "Schmidt", "Kuse"],
-      "Personal": ["Klose", "Kurany", "Adele"]
-    },
-    "standorte": [100, 200, 204, 300]
-  }
-}

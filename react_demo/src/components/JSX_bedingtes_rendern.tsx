@@ -5,7 +5,7 @@ export function Bedingtes_rendern () {
 
     // Man hat die Möglichkeit, einen Teil des Programms bedingt zu rendern. Dies wird über einen Bool gesteuert
 
-    const valid = true;
+    const [valid, setValid] = useState(true);
 
     return (
     <React.Fragment>
@@ -16,10 +16,13 @@ export function Bedingtes_rendern () {
 
 export function Bedingtes_rendern2 () {
 
-    const valid = true;
+    const [valid, setValid] = useState(true);
+
 
     return (
         <React.Fragment>
+            <button onClick={() => {setValid(false)}}>Set false</button>
+            <button onClick={() => {setValid(true)}}>Set true</button>
             {valid && <div>Moinsen</div>}
         </React.Fragment>
     )
