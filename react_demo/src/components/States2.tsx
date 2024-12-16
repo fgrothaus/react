@@ -2,12 +2,15 @@ import React, { useState } from "react";
 
 export function States2(){
 
+    // Funktionale Aktualisierung
     const [data, setData] = useState(1);
     console.log("Außerhalb des Buttons" + data);
 
-    const initData = () => {return 10 + 10};
 
     // Lazy Initialisierung läuft synchron. Nicht für Requests geeignet und langlaufende Berechnungen
+    const initData = () => {
+        return 10 + 10;
+    };
     const [state, setState] = useState(() => initData()); // Es wird nur initial beim ersten Rendern der Komponente der Zustand gerendert. Danach nicht mehr! Wird selten gebraucht
     console.log(state); // Macht nur Sinn, wenn man sich aus Performancegründen Berechnungen bei Rerendern sparen will. React prüft dann diesen State nicht auf eine Veränderung
     
