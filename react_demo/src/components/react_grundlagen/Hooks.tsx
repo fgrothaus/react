@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 export function Hooks(){
 
@@ -17,9 +19,16 @@ export function Hooks(){
         console.log(satz);
     });
 
+
+    const navigate = useNavigate();
+
+
     return (
         <React.Fragment>
             <button onClick={() => {setSatz(satz+"nochmal")}}>moinzähler</button>
+            {/* Nur für das Thema Routing (zu finden in App.tsx): useNavigate wird verwendet, um beispielsweise von Komponenten, die nicht in der Hauptleiste stehen,
+            zu anderen Seiten zu navigieren */}
+            <button onClick={() => navigate('/States')}>useNavigate from Hooks - Navigate to /States</button>
         </React.Fragment>
     )
 }

@@ -23,6 +23,19 @@ export function States() {
         setData(data);
     }
 
+    // Man kann auch ein Array in einem useState definieren
+    const [arrayState, setArrayState] = useState(
+        [
+            10, 20, 30
+        ]
+    );
+
+    const changeArrayValue = () => {
+        const newArray = [...arrayState];
+        newArray[2] = 100;
+        setArrayState(newArray)
+    };
+
     return (
         <React.Fragment>
             <p>Du hast mich {count} mal geklickt</p>
@@ -31,6 +44,8 @@ export function States() {
             {/* So werden Änderungen zwar übernommen, aber die Seite wird nicht neu gerendert, da der Spread Operator ... nicht genutzt wurde */}
             <button onClick={changeInvisibleData}>Es wird nicht gerendert</button>
             <p>{data.vorname} {data.nachname}</p>
+            <button onClick={changeArrayValue}>Change Array Value</button>
+            <p>{arrayState[2]}</p>
         </React.Fragment>
     )
 }

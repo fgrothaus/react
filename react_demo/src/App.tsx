@@ -1,76 +1,41 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Bedingtes_rendern, Bedingtes_rendern2 } from './components/JSX_bedingtes_rendern';
-import { Events } from './components/Events';
-import {States} from "./components/States";
-import {Hooks} from "./components/Hooks";
-import {Jsx_schleifen} from "./components/Jsx_schleifen";
-import {Hooks_Arbeitsweise} from "./components/Hooks_Arbeitsweise";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { States2 } from './components/States2';
+import { MainComponent } from './components/react_grundlagen/MainComponent';
+import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate } from 'react-router-dom';
+import { States } from './components/react_grundlagen/States';
+import { Hooks } from './components/react_grundlagen/Hooks';
 
-// Komponenten für die Seiten
-// function Home() {
-//   return <h2>States</h2>;
-// }
-
-// function About() {
-//   return <h2>About Page</h2>;
-// }
-
-// function Contact() {
-//   return <h2>Contact Page</h2>;
-// }
+function NavigationButton() {
+  const navigate = useNavigate();
+  return <button onClick={() => navigate('/States')}>useNavigate</button>;
+}
 
 
 function App() {
   
+    // Routing muss extra installiert werden
+    // npm install --save react-router-dom (--save wird verwendet, um sicherzugehen, dass es auch in die package.json persistiert wird)
+    // In TypeScript muss auch das installiert werden: npm i --save-dev @types/react-router-dom
+
+    // Router gehört normalerweise auf aller höchste Ebene der Anwendung
+
   return (
-      <React.Fragment>
-        {/*NEW*/}
-        {/* <States/> */}
-        <States2/>
-        {/*<Hooks/>*/}
-        {/*<Jsx_schleifen/>*/}
-        {/*<Bedingtes_rendern2 />*/}
-        {/*<Events />*/}
+      <Router>
+        <nav>
+          <Link to="/">Startseite</Link>
+          {/* <a href='/States'>States</a> */} {/* Link/NavLink verwenden, da mit Ankerelement der Zustand immer wieder neu geladen wird beim Klick auf States */}
+          <NavLink to="/Hooks">Hooks</NavLink>
+        </nav>
 
-        {/* Komponenten sind unabhängig voneinander. Das heißt, useStates der gleichen Komponente sind ebenfalls unabhängig */}
-        {/*<Hooks_Arbeitsweise />*/}
-        {/*<Hooks_Arbeitsweise />*/}
-        {/*<Hooks_Arbeitsweise />*/}
-
-
-      </React.Fragment>  
+        <Routes>
+          <Route path='/' element={<MainComponent />} />
+          <Route path='/Hooks' element={<Hooks />} /> {/* Siehe Hooks für Erklärung zu useNavigate */}
+          <Route path='/States' element={<States />} />
+        </Routes>
+        {/* <Hooks /> */}
+      </Router>  
   );
 }
 
-              //   {/* React Routing */}
-              //   <Router>
-              //   <div>
-              //     {/* Navigation */}
-              //     <nav>
-              //       <ul>
-              //         <li>
-              //           <Link to="/States">States</Link>
-              //         </li>
-              //         <li>
-              //           <Link to="/BedingtesRendern">BedingtesRendern</Link>
-              //         </li>
-              //         <li>
-              //           <Link to="/Hooks">Hooks</Link>
-              //         </li>
-              //       </ul>
-              //     </nav>
-      
-              //     {/* Routes definieren */}
-              //     <Routes>
-              //       <Route path="/States" element={<States />} />
-              //       <Route path="/BedingtesRendern" element={<Bedingtes_rendern2 />} />
-              //       <Route path="/Hooks" element={<Hooks_Arbeitsweise />} />
-              //     </Routes>
-              //   </div>
-      
-              // </Router>
 export default App;
