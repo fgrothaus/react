@@ -1,28 +1,30 @@
-# Installation von React
+Installation der Dependencies für die Nutzung von React
 
-Wichtige Notizen für die Installation von React
-
-- NodeJS muss instaalliert werden
-- npm (Node Package Manager) installieren
-    -> Wird verwendet, um Module zu installieren und Anwendung zu starten etc.
-    -> npm installieren: apt install npm (Linux); npm zip runterladen (Windows)
-    
-
-Was ist ein Linter?
-- Programm, was vor Laufzeit Fehler findet
-Git Graph installiert in VSC
-ESLint installiert in VSC
-
-React snippets kann man runterladen, ist hilfreich, aber erstmal nicht
+1. Runterladen und installieren von NodeJs, um npm nutzen zu können
+   - https://nodejs.org/en (Prüfen mit node -v)
+2. Installieren von vite
+   - npm create vite@latest ODER my-react-app
+   - npm create vite@latest my-react-app --template react (--template react gibt Styling vor mittels CSS)
+3. In das Verzeichnis wechseln
+   - cd my-react-app
+4. Notwendige Abhängigkeiten installieren aus der "package.json"
+   - npm install
+5. Vite-Entwicklungsserver starten
+   - npm run dev
 
 
+Hilfreich:
 
-// Erstellen einer React-Anwendung für JS (Vorlage von Facebook)
-npx create-react-app name
+npm run build:
+- Erstellt eine optimierte Version deines Codes für die Produktion. Diese optimierte Version wird in den dist Ordner geschrieben.
+- Diese optimierte Version im dist-Ordner wird dann letztendlich gehostet, wenn die Anwendung über das Internet verfügbar gemacht wird.
 
-// Erstellen einer React-Anwendung in TS
-npx create-react-app name --template typescript
+- Bsp.
+const sayHello = () => {
+    console.log("Hello, World!");
+};
+sayHello();
 
-// Möglicherweise Abhängigkeiten im Projektverzeichnis installieren unter Windows -> npm install
+WIRD ZU
 
-// npm start (Linux/Windows)
+const o=()=>{console.log("Hello, World!")};o();
